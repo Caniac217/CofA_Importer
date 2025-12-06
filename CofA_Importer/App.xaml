@@ -1,0 +1,11 @@
+﻿<Application x:Class="CofA_Importer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CofA_Importer">
+    <!--Commented from Application attributes because
+        I'm using dependency injection to pass in AppSettingsService-->
+    <!--StartupUri="MainWindow.xaml"-->
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

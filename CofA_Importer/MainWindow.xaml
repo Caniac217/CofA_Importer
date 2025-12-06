@@ -1,0 +1,51 @@
+﻿<Window x:Class="CofA_Importer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CofA_Importer"
+        mc:Ignorable="d"
+        Title="COFA SQL Updater"
+        Height="450" Width="800"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="MainWindow_Loaded">
+    <Grid Margin="10">
+        <!-- Define layout -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Title and Instructions -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Certificate of Analysis SQL Importer" FontWeight="Bold" FontSize="16"/>
+            <TextBlock TextWrapping="Wrap">
+                All pdf files in the CofA directory must have the naming convention of &lt;sku number&gt;[&lt;lot number&gt;].pdf 
+                or &lt;sku number&gt;[&lt;Spec Sheet&gt;].pdf.
+                Any files that do not meet the criteria will be moved to the rejected directory. 
+                A log file will be created in the logs directory after import.
+            </TextBlock>
+        </StackPanel>
+
+        <!-- Log Output -->
+        <TextBox x:Name="OutputTextBox"
+                 Grid.Row="1"
+                 Background="Black"
+                 Foreground="Lime"
+                 FontFamily="Consolas"
+                 FontSize="12"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Visible"
+                 HorizontalScrollBarVisibility="Auto"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button x:Name="btnBeginImport" Content="Begin CofA Import" Width="120" Margin="0,0,10,0" Click="btnBeginImport_Click"/>
+            <Button x:Name="btnSettings" Content="Settings" Width="75" Margin="0,0,10,0" Click="btnSettings_Click"/>
+            <Button x:Name="btnExit" Content="Exit" Width="75" Click="btnExit_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
